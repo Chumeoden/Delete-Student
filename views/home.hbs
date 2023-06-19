@@ -8,23 +8,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Home</title>
     <style>
         body {
             background-color: #1cbfc5; /* Màu xanh nước biển */
         }
     </style>
+    <title>Home</title>
 </head>
 
 <body>
-    <h1>Home page</h1>
+    <h1><a href="/" class="home-link">Home page</a></h1>
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th class="table-heading">Id</th>
                 <th class="table-heading">Name</th>
                 <th class="table-heading">Phone</th>
+                <th class="table-heading">Email</th>
                 <th class="table-heading">Action</th>
             </tr>
         </thead>
@@ -34,6 +34,7 @@
                 <td><a href="/student/{{id}}">{{id}}</a></td>
                 <td>{{name}}</td>
                 <td>{{phone}}</td>
+                <td>{{email}}</td>
                 <td><a href="/delete/{{id}}">Delete</a></td>
             </tr>
             {{/each}}
@@ -49,6 +50,12 @@
         <input type="text" id="phone" name="phone" required>
         <input type="submit" value="Thêm">
     </form>
+    <h2>Tìm kiếm người dùng</h2>
+    <form action="/" method="GET">
+        <input type="text" name="search" placeholder="Nhập tên người dùng" value="{{searchTerm}}">
+        <button type="submit">Tìm kiếm</button>
+    </form>
+
 </body>
 
 </html>

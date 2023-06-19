@@ -12,7 +12,9 @@ let dsSV = [
 ];
 
 app.get('/', (req, res) => {
-  res.render('home', { danhSach: dsSV });
+  let searchTerm = req.query.search || '';
+  let filteredList = dsSV.filter(student => student.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  res.render('home', { danhSach: filteredList, searchTerm });
 });
 
 app.get('/delete/:id', (req, res) => {
@@ -39,7 +41,7 @@ app.get('/student/:id', (req, res) => {
   let studentId = req.params.id;
   let student = dsSV.find(item => item.id == studentId);
   if (student) {
-    res.render('student', { 'student': student });
+    res.render('student', { student: student });
   } else {
     res.send('Not found!');
   }

@@ -12,7 +12,7 @@
     <title>Home</title>
     <style>
         body {
-            background-color: #007bff; /* Màu xanh nước biển */
+            background-color: #1cbfc5; /* Màu xanh nước biển */
         }
     </style>
 </head>
@@ -22,10 +22,10 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Action</th>
+                <th class="table-heading">Id</th>
+                <th class="table-heading">Name</th>
+                <th class="table-heading">Phone</th>
+                <th class="table-heading">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -39,18 +39,16 @@
             {{/each}}
         </tbody>
     </table>
-<h2>Thêm người dùng</h2>
-<form action="/add" method="POST" class="add-form">
-    <label for="name">Tên:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <label for="phone">Số điện thoại:</label>
-    <input type="text" id="phone" name="phone" required>
-    <input type="submit" value="Thêm">
-</form>
-
-
+    <h2>Thêm người dùng</h2>
+    <form action="/add" method="POST" class="add-form">
+        <label for="name">Tên:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="phone">Số điện thoại:</label>
+        <input type="text" id="phone" name="phone" required>
+        <input type="submit" value="Thêm">
+    </form>
 </body>
 
 </html>

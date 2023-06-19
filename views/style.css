@@ -1,12 +1,39 @@
-.add-form {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+/* style.css */
 
-.add-form label,
-.add-form input[type="text"],
-.add-form input[type="email"],
-.add-form input[type="submit"] {
-    margin-right: 10px;
-}
+.table-heading {
+    background-color: #f5f5f5; /* Màu nền */
+    color: #333; /* Màu chữ */
+    font-weight: bold; /* Đậm */
+    padding: 10px; /* Khoảng cách lề */
+  }
+  
+  .add-form {
+    margin-top: 20px; /* Khoảng cách từ phần tử trên */
+  }
+  
+  .add-form label {
+    display: block; /* Hiển thị nhãn trên dòng mới */
+    margin-bottom: 5px; /* Khoảng cách từ nhãn đến phần tử nhập liệu */
+  }
+  
+  .add-form input[type="text"],
+  .add-form input[type="email"] {
+    width: 250px; /* Độ rộng */
+    padding: 5px; /* Khoảng cách lề */
+    border: 1px solid #ccc; /* Viền */
+    border-radius: 4px; /* Bo góc */
+  }
+  
+  .add-form input[type="submit"] {
+    background-color: #007bff; /* Màu nền */
+    color: #fff; /* Màu chữ */
+    border: none; /* Không viền */
+    padding: 10px 20px; /* Khoảng cách lề */
+    border-radius: 4px; /* Bo góc */
+    cursor: pointer; /* Con trỏ khi di chuột */
+  }
+  
+  .add-form input[type="submit"]:hover {
+    background-color: #0056b3; /* Màu nền khi di chuột */
+  }
+  

@@ -2,12 +2,13 @@ const express = require('express');
 const app = express();
 
 app.set('view engine', 'hbs');
+app.use(express.urlencoded({ extended: true }));
 
 let dsSV = [
-  { id: 1, name: "Linh", age: 20, phone: '0901223333' },
-  { id: 2, name: "Truong", age: 23, phone: '0933533556' },
-  { id: 3, name: "Tin", age: 23, phone: '0933533556' },
-  { id: 4, name: "Luong", age: 23, phone: '0933533556' },
+  { id: 1, name: "Linh", email: "linh@example.com", phone: '0901223333' },
+  { id: 2, name: "Truong", email: "truong@example.com", phone: '0933533556' },
+  { id: 3, name: "Tin", email: "tin@example.com", phone: '0933533556' },
+  { id: 4, name: "Luong", email: "luong@example.com", phone: '0933533556' },
 ];
 
 app.get('/', (req, res) => {
@@ -17,10 +18,20 @@ app.get('/', (req, res) => {
 app.get('/delete/:id', (req, res) => {
   let studentId = req.params.id;
   let index = dsSV.findIndex(item => item.id == studentId);
-  console.log(index);
   if (index !== -1) {
     dsSV.splice(index, 1);
   }
+  res.redirect('/');
+});
+
+app.post('/add', (req, res) => {
+  const newStudent = {
+    id: dsSV.length + 1,
+    name: req.body.name,
+    email: req.body.email,
+    phone: req.body.phone
+  };
+  dsSV.push(newStudent);
   res.redirect('/');
 });
 

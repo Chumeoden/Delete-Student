@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Home</title>
     <style>
         body {
@@ -38,6 +39,18 @@
             {{/each}}
         </tbody>
     </table>
+<h2>Thêm người dùng</h2>
+<form action="/add" method="POST" class="add-form">
+    <label for="name">Tên:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="phone">Số điện thoại:</label>
+    <input type="text" id="phone" name="phone" required>
+    <input type="submit" value="Thêm">
+</form>
+
+
 </body>
 
 </html>

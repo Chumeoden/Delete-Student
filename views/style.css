@@ -1,0 +1,12 @@
+.add-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.add-form label,
+.add-form input[type="text"],
+.add-form input[type="email"],
+.add-form input[type="submit"] {
+    margin-right: 10px;
+}
